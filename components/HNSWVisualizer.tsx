@@ -187,8 +187,8 @@ export function HNSWVisualizer({
             if (!isNodeVisibleAtLayer(node, displayLayer)) return null;
             
             const pos = getNodePosition(node, displayLayer);
-            const highlighted = isHighlighted(node.id) && 
-                               (!currentStep?.layer || currentStep.layer === displayLayer);
+            const highlightStatus = isHighlighted(node.id);
+            const highlighted = (highlightStatus && (!currentStep?.layer || currentStep.layer === displayLayer)) ? highlightStatus : false;
             const radius = highlighted === 'current' ? 16 : 12;
             
             const levelColors = ['#3b82f6', '#8b5cf6', '#ec4899', '#f97316', '#14b8a6'];
