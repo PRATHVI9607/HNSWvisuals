@@ -26,11 +26,17 @@ export interface Step {
   decision?: string;
 }
 
-export interface Algorithm {
+export interface BaseAlgorithm {
   nodes: Map<number, Node>;
-  entryPoint: number | null;
   maxLevel: number;
+  insert(point: Point, recordSteps?: boolean): Step[];
+}
+
+export interface Algorithm extends BaseAlgorithm {
+  entryPoint: number | null;
   efConstruction: number;
   M: number;
   Ml: number;
+  search(query: Point, k?: number, recordSteps?: boolean): { result: Point[]; steps: Step[] };
 }
+

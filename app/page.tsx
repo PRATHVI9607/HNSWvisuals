@@ -64,8 +64,11 @@ export default function Home() {
     if (algorithm === 'skiplist') {
       const { steps: newSteps } = (algo as SkipListAlgorithm).search(query, true);
       setSteps(newSteps);
+    } else if (algorithm === 'nsw') {
+      const { steps: newSteps } = (algo as NSWAlgorithm).search(query, 1, true);
+      setSteps(newSteps);
     } else {
-      const { steps: newSteps } = algo.search(query, 1, true);
+      const { steps: newSteps } = (algo as HNSWAlgorithm).search(query, 1, true);
       setSteps(newSteps);
     }
     

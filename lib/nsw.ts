@@ -5,6 +5,7 @@ export class NSWAlgorithm {
   nodes: Map<number, Node> = new Map();
   entryPoint: number | null = null;
   M: number = 16;
+  maxLevel: number = 0;
 
   insert(point: Point, recordSteps: boolean = true): Step[] {
     const steps: Step[] = [];
