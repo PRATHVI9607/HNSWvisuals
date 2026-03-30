@@ -7,7 +7,7 @@ import { useState } from 'react';
 interface HNSWVisualizerProps {
   nodes: Map<number, Node>;
   currentStep?: Step;
-  queryPoint?: Point;
+  queryPoint?: Point | null;
   width?: number;
   height?: number;
   currentLayer?: number;

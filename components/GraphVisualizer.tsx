@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 interface GraphVisualizerProps {
   nodes: Map<number, Node>;
   currentStep?: Step;
-  queryPoint?: Point;
+  queryPoint?: Point | null;
   width?: number;
   height?: number;
   currentLayer?: number;
